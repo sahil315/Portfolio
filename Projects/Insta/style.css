@@ -1,0 +1,78 @@
+body {
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+
+}
+
+.wrap {
+
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.insta {
+
+    position: relative;
+    margin: 80px auto;
+    height: 200px;
+    width: 200px;
+    border-radius: 55px;
+    background: radial-gradient(circle at 33% 100%, #FDE74C 4%, #FA7921 30%, #D92E7F 62%, #7352ff 85%, #05668D);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.camera-box {
+    position: absolute;
+    height: 150px;
+
+    width: 150px;
+    border-radius: 42px;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+.cover-box {
+    position: absolute;
+    display: block;
+    height: 130px;
+    width: 130px;
+    top: 50%;
+    left: 50%;
+    border-radius: 32px;
+    background: radial-gradient(circle at 33% 100%, #FDE74C 4%, #FA7921 30%, #D92E7F 62%, #7352ff 85%, #05668D);
+    transform: translate(-50%, -50%);
+}
+
+.camera-circle {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cover-circle {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background: #EA4457;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.camera-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 46px;
+    left: 132px;
+}

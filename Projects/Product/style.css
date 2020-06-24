@@ -1,0 +1,240 @@
+@import "https://fonts.googleapis.com/css?family=Lato:400,700";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #EEEEEE;
+
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    background-color: #EEEEEE;
+}
+
+#header-img {
+    width: 50%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+#nav-bar ul {
+    display: flex;
+    padding-right:20px; 
+}
+
+.nav-link {
+    padding: 0px 10px;
+}
+
+.hero {
+
+    margin-bottom: 50px;
+    padding: 50px;
+}
+
+.hero h2 {
+    margin: 50px 0px 30px 0px;
+}
+
+.hero {
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end
+}
+
+#pricing {
+    display: flex;
+    line-height: 2em;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100% / 3);
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+    background: #eee;
+}
+
+.product > .level {
+    background: #ddd;
+    color: black;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 10px;
+}
+
+.product > h2 {
+    margin-top: 20px;
+
+}
+
+.product > ol {
+    margin: 15px 0;
+}
+
+.product > ol > li {
+    padding: 5px 0;
+}
+
+.product > .btn {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 50%;
+    background: darkorange;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.grid {
+    display: flex;
+
+}
+
+#container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto
+}
+
+#features {
+    justify-content: center;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    width: 20vw;
+    color: darkorange;
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 125px;
+    width: 80vw;
+    padding: 5px;
+}
+
+#how-it-works {
+    text-align: center;
+}
+
+iframe {
+    margin: 30px 0px;
+    width: 40vw;
+    height: 25vw;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #DDDDDD;
+}
+footer ul{
+     padding: 10px;
+}
+footer ul > li {
+    margin: 5px 0;
+    display: inline;
+   
+}
+
+footer p {
+    margin-top: 10px;
+    display: inline;
+}
+
+form {
+    display: inline-block;
+}
+
+.btn {
+    padding: 0 15px;
+    height: 40px;
+    font-size: 1em;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 3px black solid;
+    border-radius: 2px;
+    background: #F1C40F;
+    cursor: pointer;
+    max-width: 165px;
+    width: 100%;
+}
+
+#email {
+    margin-bottom: 15px;
+    max-width: 250px;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+@media only screen and (min-device-width : 180px) and (max-device-width : 480px) {
+    .product{
+        display: block;
+        width: auto;
+        margin: 30px auto;
+    }
+    #pricing{
+        display: block;
+        margin-top: 20px;
+        margin: 100px;
+    }
+    #header {
+    display: flex;
+        flex-direction: column
+    }
+    .logo{
+        text-align: center;
+    }
+    #nav-bar ul{
+        text-align: center;
+        display: block;
+        
+    }
+    #nav-bar ul > li{
+        padding: 10px 0px 10px 0px;
+    }
+    .hero h2{
+        margin: 120px 0px 30px 0px;
+        font-size: 0.7em;
+    }
+}
