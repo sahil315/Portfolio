@@ -1,0 +1,1202 @@
+:root {
+    --main-bg-color: #ffffff;
+    --main-text-color: antiquewhite;
+}
+
+@font-face {
+    font-family: myMediumFont;
+    src: url(../font/Gilroy-Medium.ttf);
+}
+
+@font-face {
+    font-family: myRegularFont;
+    src: url(../font/Gilroy-Regular.ttf);
+}
+
+@font-face {
+    font-family: myBoldFont;
+    src: url(../font/Gilroy-Bold.ttf);
+}
+
+@font-face {
+    font-family: myLightFont;
+    src: url(../font/Gilroy-Light.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap');
+body {
+    color: var(--main-text-color);
+    margin: 0px;
+    font-family: myLightFont;
+    font-style: normal!important;
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+img {
+    box-shadow: 0px 1px 11px 0px black;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+a:checked {
+    text-decoration: none;
+}
+
+
+/*-----------------Grid----------------------*/
+
+.navbar {
+    grid-area: nav;
+}
+
+.main {
+    grid-area: menu;
+    width: 1055px;
+}
+
+.sidebar {
+    grid-area: right;
+    width: 400px;
+    margin-left: -400px;
+}
+
+.art-sidebar {
+    grid-area: right;
+    width: 400px;
+    margin-left: -400px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'nav nav nav nav nav nav' 'menu menu menu menu menu right' 'menu menu menu menu menu right';
+    /*background-color:var(--main-bg-color);*/
+    padding: 10px;
+}
+
+.grid-container > div {
+    /*background-color: var(--main-bg-color);*/
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+
+/*-------------Carousel-------------------*/
+
+[type=radio] {
+    display: none;
+}
+
+#slider {
+    height: 300px;
+    position: relative;
+    perspective: 100%;
+    transform-style: preserve-3d;
+    width: 55%;
+    margin-left: -13px;
+}
+
+#slider label {
+    margin: auto 200px;
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+#s1:checked ~ #slide2,
+#s2:checked ~ #slide3,
+#s3:checked ~ #slide1 {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .37);
+    transform: translate3d(-30%, 0, -200px);
+    height: 60%;
+    top: 15%
+}
+
+#s1:checked ~ #slide3,
+#s2:checked ~ #slide1,
+#s3:checked ~ #slide2 {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .3), 0 2px 2px 0 rgba(0, 0, 0, .2);
+    transform: translate3d(-15%, 0, -100px);
+    height: 60%;
+    top: 15%
+}
+
+#s1:checked ~ #slide1,
+#s2:checked ~ #slide2,
+#s3:checked ~ #slide3 {
+    box-shadow: 0 13px 25px 0 rgba(0, 0, 0, .3), 0 11px 7px 0 rgba(0, 0, 0, .19);
+    transform: translate3d(0, 0, 0);
+}
+
+#s1:checked ~ #slide2,
+#s2:checked ~ #slide3,
+#s3:checked ~ #slide1 {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .3), 0 2px 2px 0 rgba(0, 0, 0, .2);
+    transform: translate3d(15%, 0, -100px);
+}
+
+#slide1 {
+    background-image: url("../Images/carousel-1.webp");
+    background-size: cover;
+}
+
+#slide2 {
+    background-image: url("../Images/carousel-2.jfif");
+    background-size: cover;
+}
+
+#slide3 {
+    background-image: url("../Images/carousel-3.jfif");
+    background-size: cover;
+}
+
+
+/* -------------NAVIGATION=-------------------*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 50px;
+    width: 90px;
+    margin-left: 50px;
+    box-shadow: none!important;
+}
+
+.logo-text {
+    display: inline-block;
+    margin: 0px;
+    font-size: 20px;
+    margin-left: -20px;
+}
+
+.fav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    margin-left: 100px;
+    vertical-align: text-top;
+}
+
+.searchContainer {
+    display: inline-flex;
+    flex: 1 1 300px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--main-bg-color);
+    border-radius: 15px;
+    border: 1px solid;
+    margin-right: 70px;
+    width: 310px;
+    height: 35px;
+}
+
+.searchIcon {
+    font-size: 20px!important;
+    margin: auto;
+    padding: 0.5rem;
+    color: #93A8B3;
+}
+
+.searchBox {
+    border: none;
+    background-color: var(--main-bg-color);
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    flex: 1;
+}
+
+.searchButton {
+    border: 0;
+    color: #93A8B3;
+    padding: 0.5rem;
+    border-radius: 0;
+    font-size: 20px!important;
+    margin: auto;
+}
+
+.left,
+.right {
+    display: inline;
+}
+
+.right {
+    margin-right: 100px;
+}
+
+.bell {
+    color: white;
+    font-size: 20px!important;
+    margin: auto;
+    position: absolute;
+    top: 40px;
+    left: 88.5%;
+}
+
+.user-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+}
+
+
+/*------------------Main section------------------*/
+
+.sub-text {
+    display: inline;
+    color: #d6e4f0;
+    font-size: 12px!important;
+    font-weight: 700;
+    font-family: myLightFont;
+    font-style: regular;
+    vertical-align: super;
+    text-transform: capitalize;
+    text-shadow: 1px 2px 4px black;
+}
+
+.main-text {
+    display: inline;
+    color: #F2F2F2!important;
+    font-size: 17px!important;
+    vertical-align: text-bottom;
+    font-family: myLightFont;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-shadow: 1px 5px 10px black;
+}
+
+.alb-text {
+    margin-left: 15px;
+}
+
+.heading {
+    color: #FFC75F;
+    display: inline;
+    margin-left: -30px;
+    font-size: 22px;
+    font-family: myBoldFont;
+}
+
+.time {
+    display: inline;
+    color: #b9e1dc;
+    margin-left: -20px;
+    font-size: 12px;
+    margin-top: 35px;
+}
+
+#release {
+    margin-left: 130px;
+    margin-top: 50px;
+}
+
+.rel-img {
+    width: 80px;
+    height: 80px;
+}
+
+
+/* icon*/
+
+.fa-ellipsis-h {
+    margin-left: 35%;
+}
+
+.release-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 110px;
+    grid-template-areas: "a b" "c d";
+    margin: 30px 0px -100px -25px;
+}
+
+.rel-alb-art {
+    display: flex;
+    width: 75%;
+}
+
+.alb-1 {
+    grid-area: a;
+}
+
+.alb-2 {
+    grid-area: b;
+    margin-left: -20%;
+}
+
+.alb-3 {
+    grid-area: c;
+}
+
+.alb-4 {
+    grid-area: d;
+    margin-left: -20%;
+}
+
+
+/*---------------Artist section-----------------------*/
+
+#artists {
+    margin-left: 130px;
+}
+
+.art-img {
+    margin-left: -30px;
+    margin-top: 40px;
+}
+
+.art-img img {
+    border-radius: 50%;
+    width: 115px;
+    height: 115px;
+    border: 2px solid #e1306c
+}
+
+.art-img span {
+    height: 120px;
+    width: 114px;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.art-img span:first-child {
+    margin-left: 0px;
+}
+
+.art-img p {
+    font-size: 15px;
+    text-align-last: center;
+}
+
+
+/*--------------category-----------------------*/
+
+#cat-1 li {
+    display: inline;
+}
+
+#cat-1:first-child {
+    padding-left: 0px;
+}
+
+#cat-1 li a img {
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+    padding-left: 20px;
+    box-shadow: none!important;
+}
+
+#cat-1 {
+    margin: 20px 169px 0px 100px;
+    padding: 20px 15px 16px 35px;
+    box-shadow: 0px 0px 10px 0px black;
+    background: linear-gradient(24deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+#cat-2 li {
+    display: inline;
+}
+
+#cat-2 li a img {
+    width: 244px;
+    height: 130px;
+    margin-left: 12px;
+    border: 2px solid #e1306c;
+    box-shadow: 0px 1px 11px 0px black;
+}
+
+#cat-2 {
+    padding-left: 100px;
+}
+
+
+/*English*/
+
+#english {
+    margin-left: 130px;
+}
+
+#eng li {
+    display: inline-grid;
+    padding-left: 5px;
+}
+
+#eng li img {
+    width: 120px;
+    height: 120px;
+    box-shadow: 0px 1px 11px 0px black;
+}
+
+#eng {
+    margin-left: -70px;
+}
+
+.eng-sub-text {
+    padding-top: 5px;
+    font-style: normal;
+}
+
+.eng-main-text {
+    padding-top: 5px;
+    font-style: normal;
+}
+
+
+/*-----------------Hindi-----------------------*/
+
+#hindi {
+    margin-left: 130px;
+}
+
+#hin li {
+    display: inline-grid;
+    padding-left: 5px;
+}
+
+#hin li img {
+    width: 120px;
+    height: 120px;
+    box-shadow: 0px 1px 11px 0px black;
+}
+
+#hin {
+    margin-left: -70px;
+}
+
+.hindi-sub-text {
+    padding-top: 5px;
+    font-style: normal;
+}
+
+.hindi-main-text {
+    padding-top: 5px;
+    font-style: normal;
+}
+
+
+/*---------------------Sidebar---------------------*/
+
+.que {
+    list-style: none;
+}
+
+.que li img {
+    width: 45px;
+    height: 45px;
+    margin-right: 5px;
+    box-shadow: 2px 4px 20px 1px rgba(233, 233, 242, 0.1);
+}
+
+.bold-text {
+    font-size: 15px;
+    vertical-align: bottom;
+    font-style: normal;
+    color: #F2F2F2!important;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-shadow: 1px 5px 10px black;
+}
+
+.que li {
+    counter-increment: number;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+
+/*-----------------Music bar---------------------*/
+
+#music-bar {
+    position: fixed;
+    bottom: 0;
+    background-color: #0E0E0E;
+    width: 100%;
+    height: 60px;
+    padding: 0px;
+    margin-left: -10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-img {
+    width: 40px;
+    height: 40px;
+    padding: 10px 0px;
+    margin-left: 110px;
+}
+
+.bar-main-text {
+    bottom: 33px;
+    position: absolute;
+    left: 160px;
+}
+
+.bar-sub-text {
+    bottom: 20px;
+    position: absolute;
+    left: 160px;
+}
+
+.heart {
+    position: absolute;
+    left: 285px;
+    bottom: 25px;
+    font-size: 25px;
+    color: dimgrey;
+}
+
+.down {
+    position: absolute;
+    left: 315px;
+    bottom: 30px;
+    font-size: 20px!important;
+    color: dimgrey;
+}
+
+.vol-slider {
+    width: 140px;
+    bottom: 20px;
+    position: absolute;
+    left: 1180px;
+}
+
+.song-slider {
+    background: red;
+    width: 350px;
+    position: absolute;
+    bottom: 5px;
+    left: 500px;
+}
+
+.repeat {
+    color: grey;
+    font-size: 20px;
+    position: absolute;
+    left: 510px;
+    bottom: 25px;
+    font-style: normal;
+}
+
+.shuffle {
+    position: absolute;
+    bottom: 25px;
+    font-size: 20px;
+    color: grey;
+    left: 820px;
+    font-style: normal;
+}
+
+.pause {
+    position: absolute;
+    bottom: 25px;
+    font-size: 25px;
+    color: white;
+    left: 665px;
+    font-style: normal;
+}
+
+.prev {
+    font-style: normal;
+    position: absolute;
+    bottom: 25px;
+    font-size: 25px;
+    color: white;
+    left: 630px;
+}
+
+.next {
+    font-style: normal;
+    position: absolute;
+    bottom: 25px;
+    font-size: 25px;
+    color: white;
+    left: 700px;
+}
+
+.volume {
+    position: absolute;
+    bottom: 17px;
+    left: 1160px;
+    color: grey;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.settings {
+    position: absolute;
+    bottom: 20px;
+    left: 1130px;
+    color: grey;
+    font-size: 15px;
+    font-style: normal;
+}
+
+.share {
+    position: absolute;
+    bottom: 20px;
+    left: 1100px;
+    color: grey;
+    font-size: 15px;
+    font-style: normal;
+}
+
+
+/*-------------Artist Page-----------------*/
+
+#cover span img {
+    width: 240px;
+    height: 270px;
+    margin-left: 85px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#cover {
+    display: flex;
+}
+
+.bio-text {
+    color: #020205;
+    font-family: myLightFont;
+}
+
+.bio {
+    width: 530px;
+    height: 270px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(380deg, #823A8D, #7741BF, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.button {
+    background: linear-gradient(to right, rgb(51, 36, 175) 0%, rgb(107, 49, 193) 40%, rgb(162, 64, 212) 80%, rgb(190, 71, 221) 100%);
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    padding: 10px 40px;
+    font-family: sans-serif
+}
+
+.follow {
+    font-size: 16px;
+    margin-left: 30px;
+    color: white;
+}
+
+.song-list {
+    display: flex;
+    justify-content: space-between;
+    width: 772px;
+    margin-left: 84px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgba( 255, 255, 255, 0.1);
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.2);
+    margin-top: 15px;
+}
+
+.song-list img {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.similar-list {
+    list-style: none;
+}
+
+.like:hover {
+    fill: red;
+}
+
+.like:visited {
+    background: red;
+}
+
+
+/*----------------Media QUERY------------------*/
+
+@media screen and (min-width: 320px) and (max-width:640px) {
+    body {
+        background-attachment: fixed;
+    }
+    * {}
+    .searchContainer {
+        background: #e1306c;
+        border: 0px;
+        margin-right: 70px;
+        width: 200px;
+    }
+    .searchBox {
+        display: none;
+    }
+    .searchButton {
+        margin-right: 70px;
+        width: 200px;
+    }
+    .searchIcon {
+        margin: 0;
+    }
+    .bell {
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
+    .navbar {
+        width: 100%;
+    }
+    .main {
+        width: 100%;
+    }
+    #slider label {
+        width: 70%;
+        margin: 0px;
+    }
+    #slider {
+        width: 100%;
+        margin: 0px;
+        margin-left: 17%;
+    }
+    #release {
+        margin-left: 17%;
+    }
+    #artists {
+        margin-left: 17%;
+    }
+    #english {
+        margin-left: 17%;
+    }
+    #hindi {
+        margin-left: 17%;
+    }
+    #cat-1 {
+        display: none;
+    }
+    #cat-2 li a img {
+        width: 25%;
+    }
+    #cat-2 {
+        display: inline-block;
+        padding-left: 10%;
+    }
+    #eng li {
+        margin: 0px 5px 20px 5px;
+    }
+    #english {
+        margin-left: 15%;
+    }
+    #hindi li {
+        margin: 0px 5px 20px 5px;
+    }
+    #hindi {
+        margin-left: 15%;
+    }
+    .main {
+        margin-left: 30px;
+    }
+    #music-bar {
+        display: none;
+    }
+    .logo-text {
+        display: none;
+    }
+    .art-sidebar {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 767px) {
+    body {
+        background-attachment: fixed;
+    }
+    .main {
+        width: 100%;
+    }
+    #slider {
+        width: 50%;
+        margin-left: 0px;
+    }
+    #slider label {
+        margin: auto 0px auto 60px;
+    }
+    .sidebar {
+        width: 300px;
+        margin-left: -300px;
+    }
+    .art-sidebar {
+        display: none;
+    }
+    .art-img {
+        margin-left: -30px;
+        margin-top: 40px;
+        margin-bottom: 70px;
+    }
+    .art-img img {
+        width: 80px;
+        height: 80px;
+    }
+    .art-img span {
+        height: 80px;
+        width: 80px;
+        display: inline-flex;
+    }
+    .art-img p {
+        font-size: 14px;
+    }
+    #cat-1 li a img {
+        width: 70px;
+        height: 70px;
+        padding-left: 0px;
+    }
+    #cat-1 {
+        width: 585px;
+        padding-right: 5px;
+        padding-left: 0px;
+        margin-left: 10px;
+    }
+    #cat-2 {
+        margin-left: 10px;
+        padding-left: 0px;
+    }
+    .station-img {
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+    }
+    #cat-2 li a img {
+        width: 179px;
+    }
+    #eng li img {
+        width: 86px;
+        height: 85px;
+    }
+    #hindi li img {
+        width: 86px;
+        height: 85px;
+    }
+    #release {
+        margin-left: 40px;
+    }
+    #artists {
+        margin-left: 40px;
+    }
+    .release-box {
+        width: 90%;
+        margin-left: -25px;
+    }
+    .fa-ellipsis-h {
+        margin-left: 10%;
+    }
+    .right {
+        margin-right: 60px;
+    }
+    .alb-text {
+        margin-left: 5px;
+    }
+    #english {
+        margin-left: 40px;
+    }
+    #hindi {
+        margin-left: 40px;
+    }
+    .repeat {
+        left: 40%;
+    }
+    .prev {
+        left: 50%;
+    }
+    .next {
+        left: 60%;
+    }
+    .shuffle {
+        left: 70%;
+    }
+    .song-slider {
+        left: 40%;
+    }
+    .pause {
+        left: 55%;
+    }
+    .bell {
+        display: hidden;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    body {
+        background-attachment: fixed;
+    }
+    .main {
+        width: 100%;
+    }
+    #slider {
+        width: 50%;
+        margin-left: 0px;
+    }
+    #slider label {
+        margin: auto 0px auto 60px;
+    }
+    .sidebar {
+        width: 300px;
+        margin-left: -300px;
+    }
+    .art-img {
+        margin-left: -30px;
+        margin-top: 40px;
+        margin-bottom: 70px;
+    }
+    .art-img img {
+        width: 80px;
+        height: 80px;
+    }
+    .art-img span {
+        height: 80px;
+        width: 80px;
+        display: inline-flex;
+    }
+    .art-img p {
+        font-size: 14px;
+    }
+    #cat-1 li a img {
+        width: 70px;
+        height: 70px;
+        padding-left: 0px;
+    }
+    #cat-1 {
+        width: 585px;
+        padding-right: 5px;
+        padding-left: 0px;
+        margin-left: 10px;
+    }
+    #cat-2 {
+        margin-left: 10px;
+        padding-left: 0px;
+    }
+    .station-img {
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+    }
+    #cat-2 li a img {
+        width: 179px;
+    }
+    #eng li img {
+        width: 86px;
+        height: 85px;
+    }
+    #hindi li img {
+        width: 86px;
+        height: 85px;
+    }
+    .fa-ellipsis-h {
+        margin-left: 10%;
+    }
+    .release-box {
+        width: 90%;
+        margin-left: -25px;
+    }
+    .right {
+        margin-right: 60px;
+    }
+    .alb-text {
+        margin-left: 5px;
+    }
+    #english {
+        margin-left: 40px;
+    }
+    #hindi {
+        margin-left: 40px;
+    }
+    #release {
+        margin-left: 40px;
+    }
+    #artists {
+        margin-left: 40px;
+    }
+    .art-sidebar {
+        display: none;
+    }
+    .repeat {
+        left: 40%;
+    }
+    .prev {
+        left: 50%;
+    }
+    .next {
+        left: 60%;
+    }
+    .shuffle {
+        left: 70%;
+    }
+    .song-slider {
+        left: 34%;
+    }
+    .pause {
+        left: 55%;
+    }
+    .bell {
+        display: hidden;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .art-sidebar {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1349px) {
+    .grid-container {
+        display: grid;
+        grid-template-areas: 'nav nav nav nav nav nav' 'menu menu menu menu menu menu' 'menu menu menu menu menu menu';
+        /*background-color:var(--main-bg-color);*/
+        padding: 10px;
+        place-content: center;
+    }
+    body {
+        background-attachment: fixed;
+    }
+    .main {
+        width: 100%;
+    }
+    #slider {
+        width: 50%;
+        margin-left: 0px;
+    }
+    #slider label {
+        margin: auto 0px auto 60px;
+    }
+    .sidebar {
+        width: 300px;
+        margin-left: -300px;
+    }
+    .art-img {
+        margin-left: -30px;
+        margin-top: 40px;
+        margin-bottom: 70px;
+    }
+    .art-img img {
+        width: 80px;
+        height: 80px;
+    }
+    .art-img span {
+        height: 80px;
+        width: 80px;
+        display: inline-flex;
+    }
+    .art-img p {
+        font-size: 14px;
+    }
+    #cat-1 li a img {
+        width: 70px;
+        height: 70px;
+        padding-left: 0px;
+    }
+    #cat-1 {
+        width: 585px;
+        padding-right: 5px;
+        padding-left: 0px;
+        margin-left: 10px;
+    }
+    #cat-2 {
+        margin-left: 10px;
+        padding-left: 0px;
+    }
+    .station-img {
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+    }
+    #cat-2 li a img {
+        width: 179px;
+    }
+    #eng li img {
+        width: 86px;
+        height: 85px;
+    }
+    #hindi li img {
+        width: 86px;
+        height: 85px;
+    }
+    .fa-ellipsis-h {
+        margin-left: 10%;
+    }
+    .release-box {
+        width: 90%;
+        margin-left: -25px;
+    }
+    .right {
+        margin-right: 60px;
+    }
+    .alb-text {
+        margin-left: 5px;
+    }
+    .nav-img {
+        margin-left: 40%;
+    }
+    .bar-main-text {
+        left: 10%;
+    }
+    .bar-sub-text {
+        left: 10%;
+    }
+    #english {
+        margin-left: 40px;
+    }
+    #hindi {
+        margin-left: 40px;
+    }
+    .down {
+        left: 28%;
+    }
+    .heart {
+        left: 25%;
+    }
+    .art-sidebar {
+        display: none;
+    }
+    #release {
+        margin-left: 40px;
+    }
+    #artists {
+        margin-left: 40px;
+    }
+    .repeat {
+        left: 40%;
+    }
+    .prev {
+        left: 50%;
+    }
+    .next {
+        left: 60%;
+    }
+    .shuffle {
+        left: 70%;
+    }
+    .song-slider {
+        left: 34%;
+    }
+    .pause {
+        left: 55%;
+    }
+}
